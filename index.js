@@ -47,7 +47,7 @@ module.exports.daemon = function(script, args, opt) {
     };
 
     // spawn the child using the same node process as ours
-    var child = child_process.spawn(process.execPath, [script].concat(args), cp_opt);
+    var child = child_process.spawn(process.execPath, args.concat(script), cp_opt);
 
     // required so the parent can exit
     child.unref();
